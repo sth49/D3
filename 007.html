@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+    <div class="canvas"></div>
+    <!-- <svg width="1000" height="1000"></svg> -->
+    <script>
+        const sampleData = [
+            [5, 20, 30, '#ff0000'],
+            [5, 320, 90, '#ff0000'],
+            [5, 150, 50, '#ff0000'],
+            [7, 120, 70, '#ff0000'], 
+            [7, 530, 110, '#ff0000'],
+            [7, 410, 20, '#ff0000'], 
+            [12, 720, 60, '#ff0000'], 
+            [12, 30, 110, '#ff0000'], 
+            [12, 90, 130, '#ff0000'], 
+            [19, 510, 180, '#ff0000'],
+            [19, 310, 120, '#ff0000'],
+            [8, 50, 150, '#ff0000'],
+            [7, 50, 350, '#ff0000'],
+        ];
+        const svg = d3.select('.canvas').append('svg').attr('width',1000).attr('height',1000);
+
+        svg.selectAll('circle') // circle보다 data 수가 많을 때 enter 사용
+        .data(sampleData)
+        .enter()
+        .append('circle')
+        .attr('r', d => d[0])
+        .attr('cx', d => d[1] +10)
+        .attr('cy', d => d[2] +10)
+        .attr('fill', d => d[3])
+        
+
+    </script>
+</body>
+</html>

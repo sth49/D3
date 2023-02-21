@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body> 
+    <div class='canvas'></div>
+    <script>
+        const canvas = d3.select('.canvas');
+
+        console.log(d3.csv('data/data1.csv'));
+
+        d3.csv('data/sample.csv')
+        .then(
+            function(data){
+                console.log(data);
+
+                // const svg = canvas.append('svg')
+                // .attr('width', 2000)
+                // .attr('height', 2000);
+                data.forEach(e => {
+                    console.log(e['소재지']);
+                });
+            }
+        )
+        .catch(function(err){
+                console.error(err);
+            })
+
+    </script>
+</body>
+</html>

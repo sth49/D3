@@ -7,6 +7,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>D3</title>
     <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+        :root{
+            --main-font: 'Pacifico', cursive;
+        }
+        svg{
+            width: 500px;
+            height: 500px;
+            border: 1px gray solid;
+        }
+        text{
+            font-family: var(--main-font);
+        }
+
+    </style>
 </head>
 <body>
     <svg width="500px" height="500px">
@@ -34,7 +49,27 @@
         .text('hello world!')
         .style('font-weight', 'bold')
         .style('font-size', '34px')
-        .style('font-family', 'Pacifico');
+        .style('font-family', 'Pacifico'); 
+        
+        svg.append('rect')
+        // .attr('x', 200)
+        // .attr('y', 200)
+        .attr('width', 200)
+        .attr('height', 200)
+        .attr('fill', 'hotpink');
+
+        svg.append('circle')
+        .attr('cx', 200)
+        .attr('cy', 200)
+        .attr('r', 50)
+        .attr('fill', 'blue');
+
+        svg.append('line')
+        .attr('x1', 200)
+        .attr('y1', 200)
+        .attr('x2', 300)
+        .attr('y2', 300)
+        .attr('stroke', 'red');
     </script>
 </body> 
 </html>
